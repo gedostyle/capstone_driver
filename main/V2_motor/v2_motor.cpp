@@ -317,10 +317,8 @@ static void lora_rx_task(void *arg)
 
         if (strncmp((char *)buf, "NEXT", 4) == 0)
         {
-            // --> ADD THESE TWO LINES HERE <--
             printf("Sending ACK back to remote...\n");
             radio.transmit("ACK");
-            // --------------------------------
 
             if (!sequence_active)
             {
@@ -331,7 +329,6 @@ static void lora_rx_task(void *arg)
                 printf("--> NEXT ignored (Sequence in progress)\n");
             }
         }
-        // --> AND ADD THIS LINE HERE to go back to listening <--
         radio.startReceive();
         vTaskDelay(pdMS_TO_TICKS(10));
     }
