@@ -102,13 +102,7 @@ static void motor_pid_task(void *arg)
 
         int combined_target = home_offset + (next_count * TICKS_PER_30_DEG);
         int error = combined_target - current_pos;
-        // printf("POS: %d | TARGET: %d | ERR: %d\n", current_pos, target_position, error);
 
-        // printf("POS: %d | PHA: %d | PHB: %d | TARGET: %d\n",
-        //        current_pos,
-        //        gpio_get_level(ENCODER_PHA),
-        //        gpio_get_level(ENCODER_PHB),
-        //        target_position);
         if (abs(error) < 5)
         {
             set_motor_speed(0);
@@ -178,15 +172,12 @@ static void lora_rx_task(void *arg)
             if (strncmp((char *)buf, "NEXT", 4) == 0)
             {
                 printf("--> NEXT received, indexing 30 degrees\n");
-
-                // ─── NEW ACK CODE ───
                 printf("Sending ACK back to remote...\n");
                 int tx_state = radio.transmit("ACK");
                 if (tx_state != RADIOLIB_ERR_NONE)
                 {
                     printf("Failed to send ACK, error: %d\n", tx_state);
                 }
-                // ────────────────────
 
                 next_count++;
             }

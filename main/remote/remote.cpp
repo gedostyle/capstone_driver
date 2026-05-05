@@ -8,16 +8,12 @@
 #include <RadioLib.h>
 #include "EspHal.h"
 
-// ─────────────────────────────────────────────
-// PINS & SETTINGS
-// ─────────────────────────────────────────────
-#define LORA_CS_PIN 4   // A5/GPIO4
-#define LORA_DIO0_PIN 7 // RX/GPIO7
+#define LORA_CS_PIN 4
+#define LORA_DIO0_PIN 7
 #define LORA_RST_PIN RADIOLIB_NC
 
-#define BUTTON_PIN 14 // Wired to GND
+#define BUTTON_PIN 14
 
-// LED Pins (From your table)
 #define LED_GREEN 32
 #define LED_BLUE 15
 #define LED_RED 33
