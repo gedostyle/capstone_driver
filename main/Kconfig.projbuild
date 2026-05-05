@@ -1,0 +1,14 @@
+choice DEVICE_TARGET
+    prompt "Select target device"
+    default DEVICE_REMOTE_MOTOR_CONTROLLER
+
+config DEVICE_REMOTE_MOTOR_CONTROLLER
+    bool "LoRa Remote"
+
+config DEVICE_V1_MOTOR_CONTROLLER
+    bool "V1 Motor Controller"
+
+config DEVICE_V2_MOTOR_CONTROLLER
+    bool "V2 Motor Controller"
+
+endchoice

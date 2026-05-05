@@ -1,0 +1,28 @@
+# ESP-IDF Specific
+build/
+sdkconfig.old
+managed_components/
+dependencies.lock
+
+# Compiled Object files, Static and Dynamic libs (just in case)
+*.o
+*.a
+*.so
+*.obj
+*.elf
+*.bin
+*.map
+
+# IDE and Editor folders
+.vscode/
+.idea/
+cmake-build-*/
+*.swp
+*.log
+
+# Mac OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
